@@ -4,14 +4,132 @@
 	<meta charset="utf-8" />
 	<title>Double Pendulum</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src = "src/index.js"></script>
-	<script src = "src/sdlLIB.js"></script>
+	<link rel="Stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter">
+	<script type="module" src = "src/loader.js"></script>
 </head>
 <body>
-	<canvas width="700" height="700">
-         Get a browser that supports Canvas!
-         <!-- The user will only see the above text if their browser is older and doesn't support <canvas> -->
+	<header>
+		<h1>Double Pendulum</h1>
+	</header>
+	<main>
+		<div id="pageWrapper">
+			<section id="canvasWrapper">
+				<canvas id="backgroundCanvas">
+					Get a browser that supports Canvas!
+				</canvas>
+				<canvas id="tracingCanvas">
+					Get a browser that supports Canvas!
+				</canvas>
+				<canvas id="foregroundCanvas">
+					Get a browser that supports Canvas!
+				</canvas>
+			</section>
+			<section id="contentWrapper">
+				<h1>Controls</h1>
+				<div id="controlsWrapper">
+					<div class="controlsContainerColumn">
+						<div class="controlContainer">
+							<h2>Buttons</h2>
+						</div>
+						<div class="controlContainer">
+							<button id="startPauseButton">Start</button>
+						</div>
+						<div class="controlContainer">
+							<button id="resetButton">Reset</button>
+						</div>
+						<div class="controlContainer">
+							<button id="addButton">Add</button>
+							<select name="text" id="addDropDown">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="5">5</option>
+								<option value="10">10</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+							</select>
+						</div>
+						<div class="controlContainer">
+							<label>Safe Add (Max: 150)</label><br>
+							<input type="checkbox" id="safeMode" name="safeMode" value="true">
+						</div>
+						<div class="controlContainer">
+							<label>Hide Pendulums</label><br>
+							<input type="checkbox" id="hidePendulums" name="hidePendulums" value="false">
+						</div>
+						<div class="controlContainer">
+							<label>NightTime</label><br>
+							<input type="checkbox" id="nightTime" name="NightTime" value="false">
+						</div>
+					</div>
 	
-      </canvas>
+					<div class="controlsContainerColumn">
+						<div class="controlContainer">
+							<h2>Sliders</h2>
+						</div>
+						<div class="controlContainer">
+							<label>Gravity</label>
+							<input type="range" min="1" max="10" class="slider" id="gravityRange">
+							<p id="gravityValue"></p>
+						</div>
+						<div class="controlContainer">
+							<label>Dampening</label>
+							<input type="range" min="0" max="10" class="slider" id="dampeningRange">
+							<p id="dampeningValue"></p>
+						</div>
+						<div class="controlContainer">
+							<label>Mass1</label>
+							<input type="range" min="1" max="10" class="slider" id="mass1Range">
+							<p id="mass1Value"></p>
+						</div>
+						<div class="controlContainer">
+							<label>Mass2</label>
+							<input type="range" min="1" max="10" class="slider" id="mass2Range">
+							<p id="mass2Value"></p>
+						</div>
+						<div class="controlContainer">
+							<label>Length1</label>
+							<input type="range" min="50" max="225" class="slider" id="length1Range">
+							<p id="length1Value"></p>
+						</div>
+						<div class="controlContainer">
+							<label>Length2</label>
+							<input type="range" min="50" max="225" class="slider" id="length2Range">
+							<p id="length2Value"></p>
+						</div>
+					</div>
+					<div class="controlsContainerColumn">
+						<div class="statsContainer">
+							<h2>Stats</h2>
+						</div>
+						<div class="statsContainer">
+							<label>Total # of Pendulums:</label>
+							<p id="pendulumCount"></p>
+						</div>
+						<div class="statsContainer">
+							<label>Avg. Potential:</label>
+							<p id="averagePotential"></p>
+						</div>
+						<div class="statsContainer">
+							<label>Avg. Kinetic:</label>
+							<p id="averageKinetic"></p>
+						</div>
+					</div>
+				</div>
+				<div id="descriptionWrapper">
+					<h1>Description</h1>
+					<p>
+						In this simulation you can play around with all the variables that effect the trajectory of a double
+						pendulum. Drag anywhere on the screen to adjust
+						the position of the double pendulum, and click start to watch it go! If you take a look to the sliders section, you can adjust the
+						mass and length of the pendulum, as well as the gravity and dampening. Once you've played around 
+						with a single double pendulum, I encourage you to experiment with adding more. Have fun!
+					</p>
+				</div>
+			</section>
+		</div>
+	</main>
+	<footer>
+		&#169; 2021 copyright Sean Lynch
+	</footer>
 </body>
 </html>

@@ -1,11 +1,133 @@
+*{
+     font-family: 'Architects Daughter', serif;
+     margin: 0;
+}
+h1{
+     font-size: 50px;
+     text-align: center;
+     margin: 0;
+}
+header{
+     background-color: #2B2D42;
+     height: 100px;
+     padding-top: 25px;
+}
+header h1{
+     color:white;
+}
 body{
-    background: #dddddd;
+     background: #7ee9fb;
  }
-
+#pageWrapper{
+     margin:10px;
+}
+#canvasWrapper{
+    position: relative;
+}
 canvas{
-    background: #ffffff;
     cursor: pointer;
+    position: absolute;
+}	
+h2{
+     font-size: 30px;
+     text-decoration: underline;
+}
+button, label, select{
+     font-size: 20px;
+     font-weight: bold;
+}
+button{
+     width: 100px;
+}
+#contentWrapper{
+     display: flex;
+     flex-direction: column;
+     border-radius: 15px;
+     background-color: #99eba7;
+}
+#contentWrapper h1{
+     border-bottom: 1px solid black;
+}
+#controlsWrapper{
+     padding-top: 20px;
+     padding-bottom: 10px;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+}
+#addDropDown{
     margin-left: 10px;
+}
+.controlsContainerColumn{
+     display: flex;
+     flex-direction: column;
+     width:300px;
+     gap: 30px;
+}
+.controlContainer, .statsContainer{
+     display: flex;
+     align-items: center;
+     height: 30px;
+}
+label{
+     font-size: 25px;
+     margin-right: 10px;
+}
+p{
+     font-size: 30px;
+     margin:0;
+}
+#descriptionWrapper p{
+     font-size: 25px;
+     padding: 20px;
+}
+.controlContainer p{
+    padding-left: 10px;
+}
+footer{
+    height: 70px;
     margin-top: 10px;
-    box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
- }	
+    background-color: #2B2D42;
+    color:white;
+    border: 2px solid black;
+    font-size: 20px;
+    text-align: center;
+    padding-top:40px;
+}
+button{
+     background-color: white;
+     color: black;
+     border: 2px solid #4082bb;
+     border-radius: 10px;
+}
+button:hover {
+     background-color: #dfdfdf;
+}
+button:focus{
+     outline: none;
+}
+select{
+     background-color: white;
+     color: black;
+     border: 2px solid #4082bb;
+     border-radius: 10px;
+}
+select:focus{
+     outline:none;
+}
+/* Style inpired by: https://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html */
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 8px;
+    background: #5d9cbe;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    margin-top: -4px;
+}
